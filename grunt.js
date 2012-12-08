@@ -23,7 +23,7 @@ module.exports = function(grunt) {
         forcecompile: true,
         require: [],
         debugsass: false,
-        images: '/img/',
+        images: 'img',
         relativeassets: true
         // outputstyle: 'compressed'
       },
@@ -31,11 +31,11 @@ module.exports = function(grunt) {
       prod: {
         src: 'scss',
         dest: 'css',
-        linecomments: true,
+        linecomments: false,
         forcecompile: true,
         require: [],
         debugsass: false,
-        images: '/img/',
+        images: 'img',
         relativeassets: true,
         outputstyle: 'compressed'
       }
@@ -59,10 +59,9 @@ module.exports = function(grunt) {
 
   });
 
-
   grunt.loadNpmTasks( 'grunt-compass' );
 
   grunt.registerTask('dev', 'server watch');
-
   grunt.registerTask('prod', 'min compass:prod');
+
 };
