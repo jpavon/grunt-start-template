@@ -1,0 +1,11 @@
+{
+  "name": "grunt-start-template",
+  "description": "",
+  "version": "0.1",
+  "author": "Julio Pavón",
+  "homepage": "/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jpavon/grunt-start-template.git"
+  }
+}

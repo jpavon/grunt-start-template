@@ -1,0 +1,19 @@
+//  EM
+//  ========================================
+
+@function _em( $target, $context: 16 ) {
+  @return ( $target / $context ) * 1em;
+}
+
+
+//  RWD
+//  ========================================
+
+@mixin mq($point, $increase: 0) {
+  @if $point == red {
+    @media (min-width: _em(500, 16) + $increase) { @content; }
+  }
+//  @if $point == green {
+//    @media (min-width: _em(608, 16) + $increase) { @content; }
+//  }
+}

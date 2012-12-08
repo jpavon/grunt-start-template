@@ -1,0 +1,28 @@
+p, ul, ol, dl {
+  font-size: _em( 13, 16 );
+  line-height: 1.7;
+  margin-bottom: _em( 16, 16 );
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: 0.7em;
+  font-weight: 700;
+}
+
+h1, .h1 { font-size: _em( 32, 16 ); }
+h2, .h2 { font-size: _em( 28, 16 ); }
+h3, .h3 { font-size: _em( 24, 16 ); }
+h4, .h4 { font-size: _em( 18, 16 ); }
+h5, .h5 { font-size: _em( 16, 16 ); }
+h6, .h6 { font-size: _em( 14, 16 ); }
+
+a { color: #fff; text-decoration: none; }
+a:visited { color: #fff; }
+a:hover { color: #fff; @include opacity(0.9); }
+
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+
+input:valid, textarea:valid { }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
