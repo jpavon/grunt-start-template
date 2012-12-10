@@ -17,9 +17,9 @@ h4, .h4 { font-size: _em( 18, 16 ); }
 h5, .h5 { font-size: _em( 16, 16 ); }
 h6, .h6 { font-size: _em( 14, 16 ); }
 
-a { color: #fff; text-decoration: none; }
-a:visited { color: #fff; }
-a:hover { color: #fff; @include opacity(0.9); }
+a { text-decoration: none; }
+a:visited { }
+a:hover { }
 
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
 ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
