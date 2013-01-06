@@ -1,11 +1,22 @@
 {
   "name": "grunt-start-template",
-  "description": "",
-  "version": "0.1",
-  "author": "Julio Pavón",
-  "homepage": "/",
+  "version": "0.1.0",
+  "description": "Grunt start template.",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "~0.4.0rc4",
+    "grunt-compass": "~0.3.7",
+    "grunt-reload": "~0.2.0",
+    "grunt-contrib-concat": "~0.1.1",
+    "grunt-contrib-uglify": "~0.1.0",
+    "grunt-contrib-watch": "~0.1.4",
+    "grunt-contrib-connect": "~0.1.0",
+    "grunt-contrib-compass": "~0.1.0"
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jpavon/grunt-start-template.git"
-  }
+    "url": "https://github.com/jpavon/grunt-start-template.git"
+  },
+  "author": "Julio Pavón",
+  "license": "BSD"
 }
