@@ -10,8 +10,8 @@ module.exports = function(grunt) {
 
    compass: {
      dev: {
-       src: 'scss',
-       dest: 'css',
+       src: 'src/scss',
+       dest: 'dist/css',
        linecomments: true,
        forcecompile: true,
        require: [],
@@ -22,8 +22,8 @@ module.exports = function(grunt) {
      },
 
      prod: {
-       src: 'scss',
-       dest: 'css',
+       src: 'src/scss',
+       dest: 'dist/css',
        linecomments: false,
        forcecompile: true,
        require: [],
@@ -35,14 +35,14 @@ module.exports = function(grunt) {
    },
 
    watch: {
-     files: ['js/*.js', 'scss/*', 'index.html'],
+     files: ['src/js/*.js', 'src/scss/*', 'src/index.html'],
      tasks: ['compass:dev', 'uglify']
    },
 
    uglify: {
      mainjs: {
        files: {
-         'js/min/main.min.js': ['js/plugins/*', 'js/main.js']
+         'dist/js/min/main.min.js': ['src/js/plugins/*', 'src/js/main.js']
        }
      }
    },
@@ -51,7 +51,19 @@ module.exports = function(grunt) {
      server: {
        options: {
          port: 8000,
-         base: ''
+         base: 'src/'
+       }
+     }
+   },
+
+   copy: {
+     dist: {
+       files: {
+         // "dist/favicon.ico": "src/favicon.ico",
+         // "dist/robots.txt": "src/robots.txt",
+         // "dist/index.html": "src/index.html",
+         "dist/": "src/*",
+         "dist/js/vendor/": "src/js/vendor/*"
        }
      }
    }
@@ -63,11 +75,12 @@ module.exports = function(grunt) {
  grunt.loadNpmTasks('grunt-contrib-connect');
  grunt.loadNpmTasks('grunt-contrib-uglify');
  grunt.loadNpmTasks('grunt-contrib-concat');
+ grunt.loadNpmTasks('grunt-contrib-copy');
  grunt.loadNpmTasks('grunt-compass');
 
  // registerTasks
  grunt.registerTask('dev', ['connect', 'watch']);
- grunt.registerTask('prod', ['uglify', 'compass:prod']);
+ grunt.registerTask('prod', ['uglify', 'compass:prod', 'copy']);
 
 
 };
