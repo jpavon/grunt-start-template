@@ -4,16 +4,18 @@
 
 ```
 .
+├── Gruntfile.js
 ├── README.md
 ├── css
 │   └── style.css
 ├── favicon.ico
-├── grunt.js
 ├── index.html
 ├── js
 │   ├── main.js
 │   ├── min
 │   │   └── main.min.js
+│   ├── plugins
+│   │   └── plugins.js
 │   └── vendor
 │       ├── jquery.min.js
 │       └── modernizr.min.js
