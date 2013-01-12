@@ -2,16 +2,13 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    pkg: '<json:package.json>',
 
-    // meta: {
-    //   banner: '/*! <%= pkg.name %>, <%= pkg.description %> - v<%= pkg.version %> */'
-    // },
+    pkg: grunt.file.readJSON("package.json"),
 
     compass: {
       dev: {
         src: 'src/scss',
-        dest: 'dist/css',
+        dest: 'src/css',
         linecomments: true,
         forcecompile: true,
         require: [],
@@ -22,7 +19,7 @@ module.exports = function(grunt) {
       },
       prod: {
         src: 'src/scss',
-        dest: 'dist/css',
+        dest: 'src/css',
         linecomments: false,
         forcecompile: true,
         require: [],
@@ -36,6 +33,7 @@ module.exports = function(grunt) {
     watch: {
       files: [
         'src/js/*.js',
+        'src/js/plugins/*.js',
         'src/scss/*',
         'src/index.html'
       ],
@@ -45,7 +43,7 @@ module.exports = function(grunt) {
     uglify: {
       mainjs: {
         files: {
-          'dist/js/min/main.min.js':
+          'src/js/min/main.min.js':
           [
             'src/js/plugins/*',
             'src/js/main.js'
@@ -66,10 +64,10 @@ module.exports = function(grunt) {
     copy: {
       dist: {
         files: {
-          // "dist/favicon.ico": "src/favicon.ico",
-          // "dist/robots.txt": "src/robots.txt",
-          // "dist/index.html": "src/index.html",
           "dist/": "src/*",
+          // "dist/img/": "src/img/**/*",
+          "dist/css/": "src/css/*",
+          "dist/js/min/": "src/js/min/*",
           "dist/js/vendor/": "src/js/vendor/*",
           "dist/.htaccess": "src/.htaccess"
         }
