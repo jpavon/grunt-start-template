@@ -70,7 +70,8 @@ module.exports = function(grunt) {
           // "dist/robots.txt": "src/robots.txt",
           // "dist/index.html": "src/index.html",
           "dist/": "src/*",
-          "dist/js/vendor/": "src/js/vendor/*"
+          "dist/js/vendor/": "src/js/vendor/*",
+          "dist/.htaccess": "src/.htaccess"
         }
       }
     }
