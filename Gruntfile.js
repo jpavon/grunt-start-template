@@ -6,27 +6,22 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON("package.json"),
 
     compass: {
-      dev: {
-        src: 'src/scss',
-        dest: 'src/css',
-        linecomments: true,
-        forcecompile: true,
-        require: [],
-        debugsass: false,
-        images: 'img',
-        relativeassets: true
-        // outputstyle: 'compressed'
-      },
       prod: {
-        src: 'src/scss',
-        dest: 'src/css',
-        linecomments: false,
-        forcecompile: true,
-        require: [],
-        debugsass: false,
-        images: 'img',
-        relativeassets: true,
-        outputstyle: 'compressed'
+        options: {
+          sassDir: 'src/scss',
+          cssDir: 'src/css',
+          imagesDir: 'src/img',
+          relativeAssets: true,
+          environment: 'production',
+          outputStyle: 'compressed'
+        }
+      },
+      dev: {
+        options: {
+          sassDir: 'src/scss',
+          cssDir: 'src/css',
+          imagesDir: 'src/img'
+        }
       }
     },
 
@@ -87,7 +82,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-compass');
+  grunt.loadNpmTasks('grunt-contrib-compass');
 
   // registerTasks
   grunt.registerTask('dev', ['connect', 'watch']);
