@@ -31,13 +31,19 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      files: [
-        'src/js/*.js',
-        'src/js/plugins/*.js',
-        'src/scss/*',
-        'src/index.html'
-      ],
-      tasks: ['compass:dev', 'uglify']
+      scripts: {
+        files: [
+          'src/js/*.js',
+          'src/js/plugins/*.js'
+        ],
+        tasks: ['uglify']
+      },
+      compass: {
+        files: [
+          'src/scss/*'
+        ],
+        tasks: ['compass:dev']
+      }
     },
 
     uglify: {
